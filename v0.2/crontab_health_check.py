@@ -29,6 +29,26 @@ TODAY = time.strftime('%Y-%m-%d',time.localtime(time.time()))
 LOG_FILE = '/var/log/health_check_%s.log' % TODAY
 
 
+CKECK_CPU_MEM_EMAIL_TPL1 = '''<!DOCTYPE html>
+<html>
+    <h2>%s</h2>
+    <table>
+        <tr><th width=200px>进程名</th><th width=200px>进程占用内存百分比</th><th width=200px>进程占用CPU百分比</th></tr>
+'''
+
+CKECK_CPU_MEM_EMAIL_TPL2 = '''
+    </table>
+</html>
+'''
+
+
+
+
+
+
+
+
+
 # 用于显示执行时间的装饰器
 def _show_time(func):
     @wraps(func)
